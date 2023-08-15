@@ -1,0 +1,31 @@
+﻿@model List<dotNet6_Mvc_Crud_App.Models.Domain.Employee>
+@{
+}
+<h1>Employees</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Date Of Birth</th>
+            <th scope="col">Department</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <th scope="row">@employee.Id</th>
+                <td>@employee.Name</td>
+                <td>@employee.Email</td>
+                <td>@employee.Salary</td>
+                <td>@employee.DateOfBirth.ToString("dd-MM-yyyy")</td>
+                <td>@employee.Department</td>
+                <td><a class="btn btn-outline-primary" href="Employee/View/@employee.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

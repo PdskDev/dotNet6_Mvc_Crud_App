@@ -1,8 +1,12 @@
-﻿@model dotNet6_Mvc_Crud_App.Models.AddEmployeeViewModel
+﻿@model dotNet6_Mvc_Crud_App.Models.UpdateEmployeeViewModel
 @{
 }
-<h1>Add Employee</h1>
-<form method="post" action="Add" class="mt-4">
+<h1>Edit Employee</h1>
+<form method="post" action="View" class="mt-4">
+    <div class="mb-3">
+        <label for="inputId" class="form-label">Id</label>
+        <input type="text" class="form-control" id="inputId" asp-for="Id" readonly>
+    </div>
     <div class="mb-3">
         <label for="inputName" class="form-label">Name</label>
         <input type="text" class="form-control" id="inputName" asp-for="Name">
@@ -31,4 +35,5 @@
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-danger" asp-controller="Employee" asp-action="Delete">Delete</button>
 </form>
